@@ -7,8 +7,17 @@ pipeline {
       }
     }
     stage('node version') {
-      steps {
-        sh 'ssh -o StrictHostKeyChecking=no ubuntu@52.202.186.125 \'node -v\''
+      parallel {
+        stage('node version') {
+          steps {
+            sh 'ssh -o StrictHostKeyChecking=no ubuntu@52.202.186.125 \'node -v\''
+          }
+        }
+        stage('composer version') {
+          steps {
+            sh 'ssh -o StrictHostKeyChecking=no ubuntu@52.202.186.125 \'composer --version\''
+          }
+        }
       }
     }
   }
