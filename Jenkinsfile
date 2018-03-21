@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('error') {
       steps {
-        sh '''ssh -tt -o StrictHostKeyChecking=no ubuntu@52.202.186.125 
+        sh '''ssh -tt -o StrictHostKeyChecking=no ubuntu@52.202.186.125 /bin/bash
 cd ~/jenkinstest 
 git pull origin master
 pwd'''
