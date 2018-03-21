@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
-        sh '''ssh ubuntu@52.202.186.125
+        sh '''ssh -t ubuntu@52.202.186.125
 cd jenkinstest
 git pull origin master'''
       }
