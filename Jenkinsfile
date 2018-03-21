@@ -4,10 +4,10 @@ pipeline {
     stage('error') {
       steps {
         sh '''ssh -o StrictHostKeyChecking=no  ubuntu@52.202.186.125
-pwd
+\'pwd
 ls
 cd ~/jenkinstest
-git pull origin master'''
+git pull origin master\''''
       }
     }
   }
